@@ -1,0 +1,386 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400&family=Barlow+Condensed:wght@400;700&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* | UTILITY CLASSES */
+img {
+	display: block;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+li {
+	list-style-type: none;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.mobile {
+	display: none;
+}
+
+.order {
+	order: 1;
+}
+
+.btn {
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ls {
+	letter-spacing: 5px;
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--red: hsl(0, 100%, 68%);
+	--very-dark-blue: hsl(230, 29%, 20%);
+	--dark-grayish-blue: hsl(230, 11%, 40%);
+	--grayish-blue: hsl(231, 7%, 65%);
+	--light-grayish-blue: hsl(207, 33%, 95%);
+
+	/* | FONTS  */
+	--h1-fonts: 700 3.75em 'Barlow ';
+	--nav-fonts: 700 1.1em 'Barlow  ';
+	--p-fonts: 400 1.1em 'Barlow Condensed';
+	--body-fonts: 400 16px 'Barlow Condensed';
+}
+
+/* | GENERAL STYLES */
+html {
+	max-width: 100%;
+	aspect-ratio: 9/5;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font: var(--body-fonts);
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+body > * {
+	width: 100%;
+	padding-inline: 10.3em;
+	overflow: hidden;
+}
+
+.nav {
+	padding-block: 4em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 3.1em;
+}
+
+.nav img {
+	width: 2em;
+	height: auto;
+}
+
+.nav-links {
+	font: var(--nav-fonts);
+	color: var(--very-dark-blue);
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2.6em;
+}
+
+.nav-links li:not(:nth-child(4)):hover {
+	text-decoration: underline;
+}
+
+.nav-links li:nth-child(4) {
+	padding: 0.19em;
+	border-radius: 50%;
+	background-color: var(--grayish-blue);
+}
+
+.nav-links li:nth-child(5) {
+	color: var(--grayish-blue);
+}
+
+main {
+	padding-block: 7.8em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.9em;
+}
+
+main > * {
+	width: 50%;
+}
+
+.img-section img {
+	aspect-ratio: 60/29;
+	height: 29em;
+}
+
+.text-section {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 2.8em;
+}
+
+.text-section li:first-child {
+	margin-bottom: -0.9em;
+	color: var(--dark-grayish-blue);
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+}
+
+.text-section li:first-child span {
+	width: 3em;
+	height: 1.6em;
+	border-radius: 3.1em;
+	background-color: var(--very-dark-blue);
+	color: var(--light-grayish-blue);
+}
+
+h1 {
+	font: var(--h1-fonts);
+	text-transform: uppercase;
+	color: var(--very-dark-blue);
+}
+
+.text-section p {
+	max-width: 16.6em;
+	color: var(--dark-grayish-blue);
+	font: var(--p-fonts);
+}
+
+.text-section li:last-child {
+	margin-top: 1.25em;
+	text-transform: uppercase;
+	color: var(--dark-grayish-blue);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5em;
+}
+
+.text-section li:last-child span {
+	width: 11.5em;
+	height: 3em;
+	border-radius: 0.25em;
+	color: var(--light-grayish-blue);
+	background-color: var(--red);
+}
+
+.text-section li:last-child span:hover {
+	opacity: 0.8;
+}
+
+.bgi {
+	width: 50%;
+	height: 50%;
+	border-end-start-radius: 3.4em;
+	background-color: var(--light-grayish-blue);
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+@media screen and (max-width: 1200px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-fonts: 400 13px 'Barlow';
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-fonts: 400 10px 'Barlow';
+	}
+}
+
+@media screen and (max-width: 750px) {
+	/* | UTILITY CLASSES */
+	.cp {
+		cursor: pointer;
+	}
+
+	.mobile {
+		display: flex;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	.order {
+		order: 0;
+	}
+
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-fonts: 700 2.5em 'Barlow Condensed';
+		--nav-fonts: 700 1.1em 'Barlow Condensed';
+		--p-fonts: 400 1.5em 'Barlow';
+		--body-fonts: 400 32px 'Barlow';
+		--ls-fonts: 400 28px 'Barlow';
+	}
+
+	/* | GENERAL STYLES */
+	html {
+		aspect-ratio: 15/32;
+	}
+
+	body > * {
+		padding-inline: 2em;
+	}
+
+	.nav {
+		padding-block: 2.4em;
+	}
+
+	.nav img {
+		width: 1.5em;
+	}
+
+	img[alt='Close Icon'] {
+		width: 1.12em;
+	}
+
+	.nav li:last-child .disn {
+		display: none;
+	}
+
+	.nav-links {
+		width: calc(100% - 4em);
+		padding: 1.9em 1.5em;
+		border-radius: 0.3em;
+		background-color: var(--light-grayish-blue);
+		box-shadow: 0 0 0.7em 0 var(--dark-grayish-blue);
+		display: none;
+		flex-flow: column;
+		gap: 1.8em;
+		position: fixed;
+		top: 6.25em;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	.nav-links li {
+		width: 100%;
+		text-align: center;
+	}
+
+	.nav-links li:nth-child(4) {
+		padding: 0;
+		border-radius: 0;
+		border-top: 1px solid var(--grayish-blue);
+	}
+
+	main {
+		padding-block: 1.6em 5.6em;
+		flex-flow: column;
+		gap: 5.4em;
+	}
+
+	main > * {
+		width: 100%;
+		height: auto;
+	}
+
+	.img-section img {
+		margin-inline: -1em;
+		aspect-ratio: 60/29;
+		height: 15em;
+	}
+
+	.text-section {
+		gap: 1.5em;
+	}
+
+	.text-section li:first-child {
+		gap: 1em;
+	}
+
+	.text-section li:first-child span {
+		width: 3.4em;
+		height: 1.8em;
+	}
+
+	.text-section p {
+		max-width: 16.5em;
+	}
+
+	.text-section li:last-child {
+		margin-top: 0.4em;
+		gap: 1em;
+	}
+
+	.text-section li:last-child span {
+		width: 10.9em;
+		height: 2.9em;
+	}
+
+	.bgi {
+		width: 11.7em;
+		height: 26.6em;
+	}
+
+	.ls {
+		letter-spacing: 0px;
+		font: var(--ls-fonts);
+	}
+}
+
+@media screen and (max-width: 680px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-fonts: 400 27px 'Barlow';
+	}
+}
+
+@media screen and (max-width: 550px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-fonts: 400 22px 'Barlow';
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-fonts: 400 16px 'Barlow';
+	}
+}
+
+.show {
+	display: flex;
+}
